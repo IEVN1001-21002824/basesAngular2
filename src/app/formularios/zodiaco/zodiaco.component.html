@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="formulario">
+      <h1>Datos Personales</h1>
+      <label>Nombre:</label>
+      <input type="text" [(ngModel)]="nombre">
+
+
+    <label>Apellido Paterno:</label>
+    <input type="text" [(ngModel)]="apellido1">
+
+    <label>Apellido Materno:</label>
+    <input type="text" [(ngModel)]="apellido2">
+      
+      <label>Fecha de Nacimiento:</label>
+      <div>
+        <input type="number" placeholder="Día" [(ngModel)]="dia" min="1" max="31">
+        <input type="number" placeholder="Mes" [(ngModel)]="mes" min="1" max="12">
+        <input type="number" placeholder="Año" [(ngModel)]="anio" min="1900" max="2024">
+      </div>
+  
+      <label>Sexo:</label>
+      <div>
+        <input type="radio" [(ngModel)]="sexo" value="Masculino"> Masculino
+        <input type="radio" [(ngModel)]="sexo" value="Femenino"> Femenino
+      </div>
+  
+      <button (click)="imprimirDatos()">Imprimir</button>
+    </div>
+  
+    <div class="resultado">
+      <h1>Hola {{nombre}}</h1>
+      <p>Tienes {{edad}} años</p>
+      <p>Tu signo zodiacal chino es: {{signo}}</p>
+      <img *ngIf="imagenSigno" [src]="imagenSigno" alt="{{signo}}" width="150">
+    </div>
+  </div>
+  
